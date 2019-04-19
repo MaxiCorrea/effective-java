@@ -2,47 +2,71 @@ package com.maxicorrea.effectivejava.creating_and_destroying_objects.consider_a_
 
 public class NutritionFacts {
 
-	private int servingSize;
-	private int servings;
-	private int calories;
-	private int fat;
-	private int sodium;
-	private int carbohydrate;
-
-	public void setServingSize(
-			final int servingSize) {
-		this.servingSize = servingSize;
+	/*Clase de construccion*/
+	public static class Builder {
+		private final int servingSize;
+		private final int servings;
+		private int calories;
+		private int fat;
+		private int sodium;
+		private int carbohydrate;
+		
+		public Builder(
+				final int servingSize ,
+				final int servings) {
+			this.servingSize = servingSize;
+			this.servings = servings;
+		}
+		
+		public Builder calories(
+				final int calories) {
+			this.calories = calories;
+			return this;
+		}
+		
+		public Builder fat(
+				final int fat) {
+			this.fat = fat;
+			return this;
+		}
+		
+		public Builder sodium(
+				final int sodium) {
+			this.sodium = sodium;
+			return this;
+		}
+		
+		public Builder carbohydrate(
+				final int carbohydrate) {
+			this.carbohydrate = carbohydrate;
+			return this;
+		}
+		
+		public NutritionFacts build() {
+			return new NutritionFacts(this);
+		}
 	}
 
-	public void setServings(
-			final int servings) {
-		this.servings = servings;
-	}
+	private final int servingSize;
+	private final int servings;
+	private final int calories;
+	private final int fat;
+	private final int sodium;
+	private final int carbohydrate;
 
-	public void setCalories(
-			final int calories) {
-		this.calories = calories;
-	}
-
-	public void setFat(
-			final int fat) {
-		this.fat = fat;
-	}
-
-	public void setSodium(
-			final int sodium) {
-		this.sodium = sodium;
-	}
-
-	public void setCarbohydrate(
-			final int carbohydrate) {
-		this.carbohydrate = carbohydrate;
+	private NutritionFacts(Builder builder) {
+		this.servingSize = builder.servingSize;
+		this.servings = builder.servings;
+		this.calories = builder.calories;
+		this.fat = builder.fat;
+		this.sodium = builder.sodium;
+		this.carbohydrate = builder.carbohydrate;
 	}
 	
 	public int getServingSize() {
 		return servingSize;
 	}
-
+	
 	public int getServings() {
 		return servings;
 	}
