@@ -1,5 +1,19 @@
 package com.maxicorrea.effectivejava.creating_and_destroying_objects.consider_a_builder;
 
+/**
+ * Ventajas:
+ * 
+ * 1) El patron Builder simula parametros opcionales nombrados.
+ * 
+ * 2) El patron Builder es adecuado para jerarquias de herencia.
+ * 
+ * 3) El patron Builder brinda un interface fluida que mejora la legibilidad.
+ * 
+ * 
+ * @author maximiliano
+ *
+ */
+
 public class NutritionFacts {
 
 	/*Clase de construccion*/
