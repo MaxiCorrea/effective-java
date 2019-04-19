@@ -2,58 +2,43 @@ package com.maxicorrea.effectivejava.creating_and_destroying_objects.consider_a_
 
 public class NutritionFacts {
 
-	private final int servingSize;
-	private final int servings;
-	private final int calories;
-	private final int fat;
-	private final int sodium;
-	private final int carbohydrate;
+	private int servingSize;
+	private int servings;
+	private int calories;
+	private int fat;
+	private int sodium;
+	private int carbohydrate;
 
-	public NutritionFacts(
-			final int servingSize, 
-			final int servings) {
-		this(servingSize, servings, 0);
-	}
-
-	public NutritionFacts(
-			final int servingSize, 
-			final int servings, 
-			final int calories) {
-		this(servingSize, servings, calories, 0);
-	}
-
-	public NutritionFacts(
-			final int servingSize, 
-			final int servings, 
-			final int calories, 
-			final int fat) {
-		this(servingSize, servings, calories, fat, 0);
-	}
-
-	public NutritionFacts(
-			final int servingSize, 
-			final int servings, 
-			final int calories, 
-			final int fat, 
-			final int sodium) {
-		this(servingSize, servings, calories, fat, sodium, 0);
-	}
-
-	public NutritionFacts(
-			final int servingSize, 
-			final int servings, 
-			final int calories, 
-			final int fat, 
-			final int sodium, 
-			final int carbohydrate) {
+	public void setServingSize(
+			final int servingSize) {
 		this.servingSize = servingSize;
+	}
+
+	public void setServings(
+			final int servings) {
 		this.servings = servings;
+	}
+
+	public void setCalories(
+			final int calories) {
 		this.calories = calories;
+	}
+
+	public void setFat(
+			final int fat) {
 		this.fat = fat;
+	}
+
+	public void setSodium(
+			final int sodium) {
 		this.sodium = sodium;
+	}
+
+	public void setCarbohydrate(
+			final int carbohydrate) {
 		this.carbohydrate = carbohydrate;
 	}
-
+	
 	public int getServingSize() {
 		return servingSize;
 	}
