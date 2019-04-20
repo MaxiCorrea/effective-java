@@ -21,7 +21,9 @@ public class CaseInsensitiveString {
 		this.s = requireNonNull(s);
 	}
 
-	// violacion de propiadad simetrica de equals
+	/*
+	
+	// violacion de propiedad simetrica de equals
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof CaseInsensitiveString)
@@ -31,13 +33,30 @@ public class CaseInsensitiveString {
 		return false;
 	}
 
+	*/
+	
+	@Override 
+	public boolean equals(Object o) {
+		return o instanceof CaseInsensitiveString &&
+				((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
+	}
+	
 	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
+		/*
 		CaseInsensitiveString caseInsensitiveString;
 		caseInsensitiveString = new CaseInsensitiveString("Hello");
 		String str = "Hello";
 		System.out.println(caseInsensitiveString.equals(str)); // true
 		System.out.println(str.equals(caseInsensitiveString)); // false;
+		*/
+		
+		CaseInsensitiveString caseInsensitiveString;
+		caseInsensitiveString = new CaseInsensitiveString("Hello");
+		String str = "Hello";
+		System.out.println(caseInsensitiveString.equals(str)); // false
+		System.out.println(str.equals(caseInsensitiveString)); // false;
+		
 	}
 	
 }
