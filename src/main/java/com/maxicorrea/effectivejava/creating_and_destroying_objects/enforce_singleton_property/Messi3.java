@@ -1,6 +1,6 @@
 package com.maxicorrea.effectivejava.creating_and_destroying_objects.enforce_singleton_property;
 /**
- * Implementacion del patron builder utilizando una enumeracion.
+ * Implementacion del patron singleton utilizando una enumeracion.
  * 
  * @author maximiliano
  *
