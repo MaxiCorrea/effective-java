@@ -5,6 +5,9 @@ import java.awt.Point;
 
 /**
  * 
+ * El metodo de equals y sus propiedades son complejas de implementar
+ * sin cometer errores. Una muy buena solucion es utilizar la composicion.
+ * 
  * @author maximiliano
  *
  */
