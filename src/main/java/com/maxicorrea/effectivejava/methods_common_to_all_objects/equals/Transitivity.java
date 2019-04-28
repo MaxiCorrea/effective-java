@@ -1,4 +1,4 @@
-package com.maxicorrea.effectivejava.methods_common_to_all_objects.overriding_equals;
+package com.maxicorrea.effectivejava.methods_common_to_all_objects.equals;
 /**
  * 
  * Transitividad

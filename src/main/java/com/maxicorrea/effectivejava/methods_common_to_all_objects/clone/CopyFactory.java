@@ -1,4 +1,4 @@
-package com.maxicorrea.effectivejava.methods_common_to_all_objects.clone_vs_copy;
+package com.maxicorrea.effectivejava.methods_common_to_all_objects.clone;
 
 /**
  * No es recomendable sobreescribir el metodo "clone" una mejor practica es
