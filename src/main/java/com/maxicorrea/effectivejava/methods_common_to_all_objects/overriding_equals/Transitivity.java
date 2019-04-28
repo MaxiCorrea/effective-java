@@ -1,6 +1,11 @@
 package com.maxicorrea.effectivejava.methods_common_to_all_objects.overriding_equals;
 /**
  * 
+ * Transitividad
+ * 
+ * si x.equals(y) es true and y.equals(z) es true
+ * entonces x.equals(z) deberia ser true.
+ * 
  * @author maximiliano
  *
  */
