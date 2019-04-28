@@ -7,7 +7,18 @@ package com.maxicorrea.effectivejava.methods_common_to_all_objects.overriding_eq
 public class Transitivity {
 
 	public static void main(String[] args) {
+		// violacion de simetria
+		//Point point = new Point(10,10);
+		//ColorPoint colorPoint = new ColorPoint(10,10 , new Color(0,0,0));
+		//System.out.println(point.equals(colorPoint)); // deberia ser true y es true
+		//System.out.println(colorPoint.equals(point)); // deberia ser true y es false
 		
+		ColorPoint p1 = new ColorPoint(1, 2, new Color(0,0,0));
+		Point p2 = new Point(1, 2);
+		ColorPoint p3 = new ColorPoint(1, 2, new Color(0,0,0));
+		System.out.println(p1.equals(p2));
+		System.out.println(p2.equals(p3));
+		System.out.println(p3.equals(p1));
 	}
 	
 }
@@ -33,15 +44,25 @@ class Point {
 		return y;
 	}
 	
+	/*
 	@Override
 	public boolean equals(Object obj) {
-		if((obj instanceof Point)) 
+		if(!(obj instanceof Point)) 
 			return false;
 		Point other = (Point) obj;
 		return this.x == other.x && 
 			   this.y == other.y;	
-	}
+	}*/
 	
+	// Violacion de Liskov substitution principle
+	@Override 
+	public boolean equals(Object o) {
+		if (o == null || o.getClass() != getClass())
+			return false;
+		Point p = (Point) o;
+		return p.x == x && p.y == y;
+	}
+		
 }
 
 class Color {
@@ -104,15 +125,27 @@ class ColorPoint extends Point {
 	}
 	
 	// Violacion de propiedad simetrica
-	@Override
+	/*@Override
 	public boolean equals(Object obj) {
-		if(!( obj instanceof ColorPoint))
+		if(!(obj instanceof ColorPoint))
 			return false;
 		ColorPoint other = (ColorPoint) obj;
 		return super.equals(other) && 
 			   this.color.equals(other.color);
-	}
+	}*/
 	
+	// Violacion de propiedad transitiva
+	@Override 
+	public boolean equals(Object o) {
+		if (!(o instanceof Point))
+			return false;
+		// si es un Point solo ingnoramos la propiedad de color
+		if (!(o instanceof ColorPoint))
+			return o.equals(this);
+		// si es un ColorPoint hacemos una comparacion completa
+		return super.equals(o) && ((ColorPoint) o).color==color;
+	}
+
 }
 
 
