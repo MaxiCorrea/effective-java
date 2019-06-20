@@ -1,11 +1,20 @@
 package com.maxicorrea.effectivejava.methods_common_to_all_objects.comparable;
+
+import java.util.Comparator;
+
 /**
  * 
  * @author maximiliano
  *
  */
-public class PhoneNumber implements Comparable<PhoneNumber>{
+public class PhoneNumber implements Comparable<PhoneNumber> {
 
+	/*java 1.8 fluent comparator interface*/
+	private static final Comparator<PhoneNumber> COMPARATOR = Comparator
+			.comparingInt((PhoneNumber pn)-> pn.areaCode)
+			.thenComparingInt(pn -> pn.prefix)
+			.thenComparingInt(pn -> pn.lineNum);
+	
 	private final Short areaCode;
 	private final Short prefix;
 	private final Short lineNum;
@@ -68,15 +77,8 @@ public class PhoneNumber implements Comparable<PhoneNumber>{
 	}
 
 	@Override
-	public int compareTo(PhoneNumber o) {
-		int result = Short.compare(areaCode, o.areaCode);
-		if(result != 0)
-			return result;
-		result = Short.compare(prefix,o.prefix);
-		if(result != 0)
-			return result;
-		result = Short.compare(lineNum, o.lineNum);
-		return result;
+	public int compareTo(PhoneNumber other) {
+		return COMPARATOR.compare(this, other);
 	}
 	
 }
