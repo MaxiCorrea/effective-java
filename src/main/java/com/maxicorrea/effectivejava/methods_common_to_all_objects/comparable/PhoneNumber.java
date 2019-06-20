@@ -4,7 +4,7 @@ package com.maxicorrea.effectivejava.methods_common_to_all_objects.comparable;
  * @author maximiliano
  *
  */
-public class PhoneNumber {
+public class PhoneNumber implements Comparable<PhoneNumber>{
 
 	private final Short areaCode;
 	private final Short prefix;
@@ -65,6 +65,18 @@ public class PhoneNumber {
 	@Override 
 	public String toString() {
 		return String.format("%03d-%03d-%04d",areaCode, prefix, lineNum);
+	}
+
+	@Override
+	public int compareTo(PhoneNumber o) {
+		int result = Short.compare(areaCode, o.areaCode);
+		if(result != 0)
+			return result;
+		result = Short.compare(prefix,o.prefix);
+		if(result != 0)
+			return result;
+		result = Short.compare(lineNum, o.lineNum);
+		return result;
 	}
 	
 }
