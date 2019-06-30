@@ -1,4 +1,4 @@
-package com.maxicorrea.effectivejava.classesandinterfaces.minimizeaccessibility;
+package com.maxicorrea.effectivejava.classes_and_interfaces.not_public_fields;
 
 /**
  * 
