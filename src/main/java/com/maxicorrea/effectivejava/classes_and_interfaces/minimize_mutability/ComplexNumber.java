@@ -4,12 +4,18 @@ package com.maxicorrea.effectivejava.classes_and_interfaces.minimize_mutability;
  * @author mxcorrea
  *
  */
-public final class ComplexNumber {
+public class ComplexNumber {
 
 	private final double re;
 	private final double im;
 	
-	public ComplexNumber (
+	public static final ComplexNumber valueOf(
+			final double re ,
+			final double im) {
+		return new ComplexNumber(re,im);
+	}
+	
+	private ComplexNumber (
 			final double re ,
 			final double im) {
 		this.re = re;
