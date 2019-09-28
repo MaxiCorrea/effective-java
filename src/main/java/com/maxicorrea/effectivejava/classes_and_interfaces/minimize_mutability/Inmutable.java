@@ -6,8 +6,8 @@ package com.maxicorrea.effectivejava.classes_and_interfaces.minimize_mutability;
  */
 public final class Inmutable {
 
-	private String att1;
-	private String att2;
+	private final String att1;
+	private final String att2;
 	
 	public Inmutable(
 			final String att1 ,
