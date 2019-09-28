@@ -12,6 +12,7 @@ public class Inmutable {
 	public Inmutable(
 			final String att1 ,
 			final String att2) {
+		
 		this.att1 = att1;
 		this.att2 = att2;
 	}
