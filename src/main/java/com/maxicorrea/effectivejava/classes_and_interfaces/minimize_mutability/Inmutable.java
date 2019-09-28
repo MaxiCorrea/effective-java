@@ -4,7 +4,7 @@ package com.maxicorrea.effectivejava.classes_and_interfaces.minimize_mutability;
  * @author mxcorrea
  *
  */
-public class Inmutable {
+public final class Inmutable {
 
 	private String att1;
 	private String att2;
