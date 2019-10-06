@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Ejemplo de clase decorador de un Set (Conjunto)
+ * Ejemplo de clase de reenvio de un Set (Conjunto)
  * @author mxcorrea
  *
  */
@@ -87,4 +87,19 @@ public class ForwardingSet<E> implements Set<E> {
 		set.clear();
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		return set.equals(o);
+	}
+	
+	@Override
+	public int hashCode() {
+		return set.hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return set.toString();
+	}
+	
 }
