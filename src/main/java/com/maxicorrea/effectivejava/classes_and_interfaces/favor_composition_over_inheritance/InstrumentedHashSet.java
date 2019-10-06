@@ -1,5 +1,6 @@
 package com.maxicorrea.effectivejava.classes_and_interfaces.favor_composition_over_inheritance;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -40,6 +41,13 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
 	
 	public int getAddCounter() {
 		return addCounter;
+	}
+	
+	public static void main(String[] args) {
+		InstrumentedHashSet<String> myHash = null;
+		myHash = new InstrumentedHashSet<>();
+		myHash.addAll(Arrays.asList("A","B","C"));
+		System.out.println("Counter : " + myHash.getAddCounter());
 	}
 	
 }
