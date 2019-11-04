@@ -8,34 +8,45 @@ package com.maxicorrea.effectivejava.enums_and_annotations.use_enums_instead_of_
  */
 public enum Operation {
 
-	PLUS {
+	PLUS ("+"){
 		@Override
 		public double apply(double x, double y) {
 			return x + y;
 		}
 	}, 
 	
-	MINUS {
+	MINUS ("-") {
 		@Override
 		public double apply(double x, double y) {
 			return x - y;
 		}
 	}, 
 	
-	TIMES {
+	TIMES ("*") {
 		@Override
 		public double apply(double x, double y) {
 			return x * y;
 		}
 	}, 
 	
-	DIVIDE {
+	DIVIDE ("/"){
 		@Override
 		public double apply(double x, double y) {
 			return x / y;
 		}
 	};
 
+	private final String symbol;
+	
+	private Operation(final String symbol) {
+		this.symbol = symbol;
+	}
+	
 	public abstract double apply(double x, double y);
 
+	@Override
+	public String toString() {
+		return symbol;
+	}
+	
 }
