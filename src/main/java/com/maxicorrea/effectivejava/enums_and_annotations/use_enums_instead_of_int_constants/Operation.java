@@ -63,5 +63,4 @@ public enum Operation {
 		return stringToEnum().get(symbol);
 	}
 	
-	
 }
