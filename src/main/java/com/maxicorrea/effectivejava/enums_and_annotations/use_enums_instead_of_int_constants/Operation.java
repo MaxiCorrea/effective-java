@@ -1,5 +1,8 @@
 package com.maxicorrea.effectivejava.enums_and_annotations.use_enums_instead_of_int_constants;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Implementacion de Enumeracion con comportamiento robusto.
  * 
@@ -7,7 +10,7 @@ package com.maxicorrea.effectivejava.enums_and_annotations.use_enums_instead_of_
  *
  */
 public enum Operation {
-
+	
 	PLUS ("+"){
 		@Override
 		public double apply(double x, double y) {
@@ -48,5 +51,17 @@ public enum Operation {
 	public String toString() {
 		return symbol;
 	}
+	
+	private static final Map<String, Operation> stringToEnum() {
+		Map<String, Operation> map = new HashMap<>();
+		for(Operation op : values())
+			map.put(op.toString(),op);
+		return map;
+	}
+
+	public static Operation fromString(String symbol) {
+		return stringToEnum().get(symbol);
+	}
+	
 	
 }
