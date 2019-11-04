@@ -8,20 +8,34 @@ package com.maxicorrea.effectivejava.enums_and_annotations.use_enums_instead_of_
  */
 public enum Operation {
 
-	PLUS, MINUS, TIMES, DIVIDE;
-
-	public double apply(double x, double y) {
-		switch (this) {
-		case PLUS:
+	PLUS {
+		@Override
+		public double apply(double x, double y) {
 			return x + y;
-		case MINUS:
+		}
+	}, 
+	
+	MINUS {
+		@Override
+		public double apply(double x, double y) {
 			return x - y;
-		case TIMES:
+		}
+	}, 
+	
+	TIMES {
+		@Override
+		public double apply(double x, double y) {
 			return x * y;
-		case DIVIDE:
+		}
+	}, 
+	
+	DIVIDE {
+		@Override
+		public double apply(double x, double y) {
 			return x / y;
 		}
-		throw new AssertionError("Unknown op: " + this);
-	}
+	};
+
+	public abstract double apply(double x, double y);
 
 }
