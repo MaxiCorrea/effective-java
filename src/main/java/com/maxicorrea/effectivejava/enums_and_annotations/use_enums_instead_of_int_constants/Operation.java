@@ -1,7 +1,7 @@
 package com.maxicorrea.effectivejava.enums_and_annotations.use_enums_instead_of_int_constants;
 
 /**
- * Cuestionable implementacion de una enumeracion con comprotamiento.
+ * Implementacion de Enumeracion con comportamiento robusto.
  * 
  * @author mxcorrea
  *
