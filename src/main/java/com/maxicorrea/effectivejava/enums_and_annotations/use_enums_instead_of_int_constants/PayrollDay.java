@@ -6,7 +6,9 @@ package com.maxicorrea.effectivejava.enums_and_annotations.use_enums_instead_of_
  *
  */
 public enum PayrollDay {
+	
 	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+	
 	private static final int MINS_PER_SHIFT = 8 * 60;
 
 	int pay(int minutesWorked, int payRate) {
@@ -17,8 +19,10 @@ public enum PayrollDay {
 		case SUNDAY: // Weekend
 			overtimePay = basePay / 2;
 			break;
+			
 		default: // Weekday
-			overtimePay = minutesWorked <= MINS_PER_SHIFT ? 0 : (minutesWorked - MINS_PER_SHIFT) * payRate / 2;
+			overtimePay = minutesWorked <= MINS_PER_SHIFT ?
+					0 : (minutesWorked - MINS_PER_SHIFT) * payRate / 2;
 		}
 		return basePay + overtimePay;
 	}
