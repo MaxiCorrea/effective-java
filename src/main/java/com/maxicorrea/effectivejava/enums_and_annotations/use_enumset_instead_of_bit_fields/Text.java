@@ -12,6 +12,7 @@ public class Text {
 	public static final int STYLE_UNDERLINE = 1 << 2;
 	public static final int STYLE_STRIKETHROUGH = 1 << 4;
 	
+	// text.applyStyles(STYLE_BOLD | STYLE_ITALIC);
 	public void applyStyles(int style) {
 		// code
 	}
