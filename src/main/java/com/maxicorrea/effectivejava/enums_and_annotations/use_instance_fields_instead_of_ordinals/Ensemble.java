@@ -1,31 +1,41 @@
 package com.maxicorrea.effectivejava.enums_and_annotations.use_instance_fields_instead_of_ordinals;
 /**
- * Uso indevido de valor "ordinal"
+ * No utilize los ordinal para algun tipo de logica. mejor utilize variables que se
+ *  agregan por el constructor del enum
  * @author mxcorrea
  *
  */
 public enum Ensemble {
 
-	SOLO ,
+	SOLO(1) ,
 	
-	DUET ,
+	DUET(2) ,
 	
-	TRIO ,
+	TRIO(3) ,
 	
-	QUARTER ,
+	QUARTER(4) ,
 	
-	QUINTET ,
+	DOUBLE_QUARTET(4),
 	
-	SEXTET ,
+	QUINTET(5) ,
 	
-	OCTET ,
+	SEXTET(6) ,
 	
-	NONETET,
+	OCTET(8) ,
 	
-	DECTET;
+	NONETET(10),
 	
+	DECTET(12);
+	
+	
+	private final int numberOfMusicians;
+	
+	private Ensemble(
+			final int numberOfMusicians) {
+		this.numberOfMusicians = numberOfMusicians;
+	}
 	
 	public int numberOfMusicians() {
-		return ordinal() + 1;
+		return numberOfMusicians;
 	}
 }
